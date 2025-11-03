@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML semántico: estructura limpia – Mi Blog</title>
-  <meta name="description" content="Guía práctica para estructurar un blog con HTML5 semántico: header, nav, main, article, aside y footer.">
+  <title>Del Excel a la IA: el nacimiento de una idea – Finanzas Inteligentes</title>
+  <meta name="description" content="Cómo un seguimiento en Excel evolucionó a un proyecto de TFG: una app de finanzas personales con IA para clasificar gastos, extraer datos de facturas y predecir ahorro.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -12,7 +12,7 @@
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="./">Mi Blog</a>
+      <a class="logo" href="./">Finanzas Inteligentes</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
       <ul id="nav-list" class="nav-list">
         <li><a href="./">Inicio</a></li>
@@ -23,34 +23,47 @@
   <main class="container post">
     <article>
       <header>
-        <h1>HTML semántico: estructura limpia</h1>
-        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">HTML</span></p>
+        <h1>Del Excel a la IA: el nacimiento de una idea</h1>
+        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">Proyecto</span></p>
       </header>
 
-      <p>Una buena base HTML facilita el estilo, la accesibilidad y el SEO. En un blog típico conviene usar etiquetas semánticas para que el documento sea entendible por personas y máquinas.</p>
+      <p>Durante años he llevado mis finanzas con hojas de cálculo: ingresos, gastos fijos, gasolina, comida, tarjetas… Funcionaba, pero tenía tres problemas: <strong>tiempo</strong> (anotar todo es pesado), <strong>errores</strong> (fórmulas y categorías inconsistentes) y <strong>falta de visión</strong> (difícil ver tendencias y anticipar meses complicados). De esa frustración nace el objetivo de mi TFG: <strong>convertir ese Excel en una aplicación inteligente</strong> que automatice el registro, clasifique movimientos y me ayude a tomar decisiones.</p>
 
-      <h2>Estructura recomendada</h2>
+      <h2>Dolores reales → requisitos reales</h2>
       <ul>
-        <li><strong>&lt;header&gt;</strong> y <strong>&lt;nav&gt;</strong>: marca la cabecera y el menú.</li>
-        <li><strong>&lt;main&gt;</strong>: contenido principal de la página.</li>
-        <li><strong>&lt;article&gt;</strong>: cada entrada del blog.</li>
-        <li><strong>&lt;aside&gt;</strong>: contenido complementario (opcional).</li>
-        <li><strong>&lt;footer&gt;</strong>: pie con créditos/enlaces.</li>
+        <li><strong>Registrar sin teclear:</strong> capturar datos desde <em>facturas/fotos</em> (OCR) y <em>extractos bancarios</em> (CSV).</li>
+        <li><strong>Clasificación automática:</strong> detectar categorías (supermercado, combustible, ocio…) y subcategorías.</li>
+        <li><strong>Inteligencia práctica:</strong> predicciones de gasto/ahorro y alertas de desvíos respecto al plan.</li>
+        <li><strong>Privacidad:</strong> los datos son sensibles; priorizar almacenamiento local y control del usuario.</li>
       </ul>
 
+      <h2>De la idea al enfoque técnico</h2>
+      <p>La visión es una app modular: una capa de <strong>ingestión</strong> (OCR + importación), una capa de <strong>procesado</strong> (limpieza y clasificación con IA), y una capa de <strong>presentación</strong> (panel claro con indicadores y recomendaciones). Nada “mágico”: <em>automatización bien hecha</em> que me quite trabajo y reduzca errores.</p>
+
       <figure>
-        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Esquema visual de una página HTML semántica">
-          <img src="assets/img/posts/p1-full.jpg" alt="Esquema de secciones HTML semánticas en una página">
+        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Esquema del flujo: OCR/CSV → Limpieza/Clasificación → Panel con métricas">
+          <img src="assets/img/posts/p1-full.jpg" alt="Diagrama del flujo del proyecto: OCR/CSV, clasificación y panel de control">
         </a>
-        <figcaption>Haz clic en la imagen para ampliarla.</figcaption>
+        <figcaption>Flujo inicial: importar, limpiar, clasificar y mostrar métricas accionables.</figcaption>
       </figure>
 
-      <p>Además, usa una jerarquía de títulos clara (un <code>h1</code> por página, seguido de <code>h2</code> y <code>h3</code>) y textos alternativos significativos en las imágenes.</p>
+      <h2>Qué espero conseguir</h2>
+      <p>Una herramienta que yo mismo usaría cada semana: rápida, fiable y con <strong>valor inmediato</strong>. Si al final del TFG soy capaz de capturar datos con dos clics, ver mis gastos por categorías sin corregir casi nada y anticipar fin de mes con un margen de error razonable, el proyecto habrá cumplido su propósito.</p>
+
+      <h2>Próximos pasos</h2>
+      <ol>
+        <li>Definir un <strong>modelo de datos</strong> claro (movimientos, categorías, reglas).</li>
+        <li>Prototipo de <strong>OCR + importación CSV</strong> con un conjunto de facturas realista.</li>
+        <li>Primer clasificador de <strong>categorías</strong> (base de reglas + IA ligera).</li>
+        <li>Panel mínimo con <strong>KPIs</strong> (gasto/ingreso, ahorro previsto, top categorías).</li>
+      </ol>
+
+      <p>Este blog es el diario del proceso: decisiones, avances, tropiezos y lo aprendido al transformar un Excel en una aplicación con <strong>IA aplicada a finanzas personales</strong>.</p>
     </article>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
-  <footer class="site-footer">© 2025 Mi Blog – Actividad 1</footer>
+  <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
 </body>
