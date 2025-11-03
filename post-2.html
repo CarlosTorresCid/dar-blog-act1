@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSS responsive sin frameworks – Mi Blog</title>
-  <meta name="description" content="Cómo lograr un diseño responsive con CSS puro: variables, grid/flex, tipografías fluidas e imágenes optimizadas.">
+  <title>Cómo la IA puede ayudarte a controlar tus gastos – Finanzas Inteligentes</title>
+  <meta name="description" content="De la lectura automática de facturas (OCR) a la categorización inteligente y las predicciones de ahorro: cómo la IA puede ayudarte a controlar tus gastos.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -12,7 +12,7 @@
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="./">Mi Blog</a>
+      <a class="logo" href="./">Finanzas Inteligentes</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
       <ul id="nav-list" class="nav-list">
         <li><a href="./">Inicio</a></li>
@@ -23,33 +23,62 @@
   <main class="container post">
     <article>
       <header>
-        <h1>CSS responsive sin frameworks</h1>
-        <p class="post-meta">Publicado el 4 de noviembre de 2025 · <span class="badge">CSS</span></p>
+        <h1>Cómo la IA puede ayudarte a controlar tus gastos</h1>
+        <p class="post-meta">Publicado el 4 de noviembre de 2025 · <span class="badge">IA</span></p>
       </header>
 
-      <p>Con unas pocas técnicas podemos cubrir la mayoría de casos sin depender de librerías pesadas: variables CSS, <em>flexbox</em>, <em>grid</em> y tamaños fluidos.</p>
+      <p>La inteligencia artificial no es un fin, es un <strong>medio</strong> para automatizar tareas repetitivas y tomar mejores decisiones con datos. En finanzas personales, esto se traduce en tres superpoderes: <strong>leer</strong> automáticamente facturas y tickets, <strong>clasificar</strong> movimientos sin esfuerzo y <strong>predecir</strong> tu gasto y ahorro con antelación.</p>
 
-      <h2>Buenas prácticas</h2>
-      <ul>
-        <li>Define <strong>variables</strong> para colores/espaciados y reutilízalas.</li>
-        <li>Usa <strong>grid/flex</strong> para componer tarjetas y columnas.</li>
-        <li>Limita el ancho de texto a ~70 caracteres para legibilidad.</li>
-        <li>Optimiza imágenes y añade <code>loading="lazy"</code>.</li>
-      </ul>
+      <h2>1) Leer facturas y tickets: OCR práctico</h2>
+      <p>El <em>Reconocimiento Óptico de Caracteres (OCR)</em> convierte una foto en texto estructurado. En mi proyecto, el flujo sería:</p>
+      <ol>
+        <li><strong>Captura:</strong> subo una foto del ticket o un PDF de la factura.</li>
+        <li><strong>Extracción:</strong> el OCR detecta <em>fecha, comercio, total, impuestos y líneas</em>.</li>
+        <li><strong>Normalización:</strong> limpio el texto (formato de fechas, decimales, moneda) y valido incoherencias.</li>
+      </ol>
+      <p>El objetivo es reducir al mínimo la edición manual: que la app proponga los datos y yo solo confirme.</p>
 
       <figure>
-        <a href="assets/img/posts/p2-full.jpg" data-lightbox title="Diseño responsive con grid de tarjetas">
-          <img src="assets/img/posts/p2-full.jpg" alt="Ejemplo de grid responsive de tarjetas">
+        <a href="assets/img/posts/p2-full.jpg" data-lightbox title="Del ticket a los datos: OCR y normalización para registrar un gasto">
+          <img src="assets/img/posts/p2-full.jpg" alt="Ilustración del proceso OCR: imagen del ticket convertida en datos de gasto">
         </a>
-        <figcaption>El grid de la home pasa de 3 columnas a 2 y a 1 en móvil.</figcaption>
+        <figcaption>OCR + reglas de limpieza: del papel a un movimiento listo para clasificar.</figcaption>
       </figure>
 
-      <p>Los <code>@media</code> en nuestro proyecto ajustan el número de columnas y el comportamiento del menú para pantallas pequeñas.</p>
+      <h2>2) Clasificar automáticamente tus gastos</h2>
+      <p>La clasificación es el corazón del sistema. Una combinación de <strong>reglas</strong> y <strong>modelos ligeros</strong> suele dar mejores resultados que depender solo de IA:</p>
+      <ul>
+        <li><strong>Reglas</strong> (precisas y explicables): si el comercio contiene “Repsol” → <em>Combustible</em>; si la categoría MCC es 5411 → <em>Supermercado</em>.</li>
+        <li><strong>Modelo</strong> (generaliza): un clasificador entrenado con descripciones y comerciantes para casos ambiguos o nuevos.</li>
+      </ul>
+      <p>La app aprende con el uso: si corrijo una etiqueta, se guarda una <em>regla</em> para el futuro o se reentrena el modelo con ejemplos confirmados.</p>
+
+      <h2>3) Predicción y alertas: ver el mes antes de que ocurra</h2>
+      <p>Con el histórico limpio, puedo estimar <strong>gasto del mes</strong>, <strong>ahorro previsto</strong> y <strong>categorías que se desvían</strong>. No busco exactitud milimétrica, sino <em>señales útiles a tiempo</em>:</p>
+      <ul>
+        <li><strong>Proyecciones simples</strong> (media móvil, estacionalidad por mes/día de cobro).</li>
+        <li><strong>Alertas</strong> si un gasto crece más de X% respecto a su media.</li>
+        <li><strong>Recordatorios</strong> de pagos fijos y renovación de suscripciones.</li>
+      </ul>
+
+      <h2>Diseño centrado en la acción</h2>
+      <p>La IA aporta valor cuando desemboca en una acción clara:</p>
+      <ul>
+        <li>“Esta semana vas a superar tu presupuesto en <em>Restauración</em> en ~20 €”.</li>
+        <li>“Si reduces <em>Combustible</em> un 10%, este mes alcanzarías tu objetivo de ahorro”.</li>
+        <li>“Hay un cargo duplicado en <em>Transporte</em> que deberías revisar”.</li>
+      </ul>
+
+      <h2>Privacidad y control</h2>
+      <p>Los datos financieros son <strong>sensibles</strong>. La app debe ser clara: qué se guarda, dónde, y cómo puedo borrar todo. Priorizaré <strong>almacenamiento local</strong> y permitiré exportar/importar movimientos con un clic.</p>
+
+      <h2>Resumen</h2>
+      <p>OCR para <strong>registrar</strong> sin teclear, clasificación para <strong>entender</strong> en segundos y predicción para <strong>decidir</strong> con antelación. Esa es la contribución real de la IA a mis finanzas del día a día.</p>
     </article>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
-  <footer class="site-footer">© 2025 Mi Blog – Actividad 1</footer>
+  <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
 </body>
