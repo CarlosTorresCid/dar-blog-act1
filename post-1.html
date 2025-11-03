@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entrada 1 – Mi Blog</title>
+  <title>HTML semántico: estructura limpia – Mi Blog</title>
+  <meta name="description" content="Guía práctica para estructurar un blog con HTML5 semántico: header, nav, main, article, aside y footer.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -22,21 +23,29 @@
   <main class="container post">
     <article>
       <header>
-        <h1>Título de la entrada 1</h1>
-        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">General</span></p>
+        <h1>HTML semántico: estructura limpia</h1>
+        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">HTML</span></p>
       </header>
 
-      <p>Introduce aquí el contenido de tu entrada. Añade varios párrafos, listas, etc.</p>
+      <p>Una buena base HTML facilita el estilo, la accesibilidad y el SEO. En un blog típico conviene usar etiquetas semánticas para que el documento sea entendible por personas y máquinas.</p>
+
+      <h2>Estructura recomendada</h2>
+      <ul>
+        <li><strong>&lt;header&gt;</strong> y <strong>&lt;nav&gt;</strong>: marca la cabecera y el menú.</li>
+        <li><strong>&lt;main&gt;</strong>: contenido principal de la página.</li>
+        <li><strong>&lt;article&gt;</strong>: cada entrada del blog.</li>
+        <li><strong>&lt;aside&gt;</strong>: contenido complementario (opcional).</li>
+        <li><strong>&lt;footer&gt;</strong>: pie con créditos/enlaces.</li>
+      </ul>
 
       <figure>
-        <!-- Para lightbox: usa data-lightbox apuntando a la imagen grande -->
-        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Imagen ampliada de la entrada 1">
-          <img src="assets/img/posts/p1-full.jpg" alt="Imagen de la entrada 1">
+        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Esquema visual de una página HTML semántica">
+          <img src="assets/img/posts/p1-full.jpg" alt="Esquema de secciones HTML semánticas en una página">
         </a>
         <figcaption>Haz clic en la imagen para ampliarla.</figcaption>
       </figure>
 
-      <p>Más contenido…</p>
+      <p>Además, usa una jerarquía de títulos clara (un <code>h1</code> por página, seguido de <code>h2</code> y <code>h3</code>) y textos alternativos significativos en las imágenes.</p>
     </article>
   </main>
 
