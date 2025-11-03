@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entrada 1 – Mi Blog</title>
+  <title>JS mínimo para dar vida a tu web – Mi Blog</title>
+  <meta name="description" content="Interacciones básicas en JavaScript: menú móvil accesible, lightbox de imágenes y botón para volver arriba.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -22,21 +23,27 @@
   <main class="container post">
     <article>
       <header>
-        <h1>Título de la entrada 1</h1>
-        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">General</span></p>
+        <h1>JS mínimo para dar vida a tu web</h1>
+        <p class="post-meta">Publicado el 5 de noviembre de 2025 · <span class="badge">JavaScript</span></p>
       </header>
 
-      <p>Introduce aquí el contenido de tu entrada. Añade varios párrafos, listas, etc.</p>
+      <p>Sin frameworks podemos cubrir interacciones típicas: abrir/cerrar el menú móvil, mostrar un lightbox al pulsar una imagen y un botón de “volver arriba”.</p>
+
+      <h2>Qué hace nuestro JS</h2>
+      <ol>
+        <li><strong>Menú móvil:</strong> alterna la clase <code>.open</code> y actualiza <code>aria-expanded</code>.</li>
+        <li><strong>Lightbox:</strong> escucha clicks en elementos con <code>data-lightbox</code> y muestra un overlay.</li>
+        <li><strong>Scroll-top:</strong> aparece al bajar y hace scroll suave al inicio.</li>
+      </ol>
 
       <figure>
-        <!-- Para lightbox: usa data-lightbox apuntando a la imagen grande -->
-        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Imagen ampliada de la entrada 1">
-          <img src="assets/img/posts/p1-full.jpg" alt="Imagen de la entrada 1">
+        <a href="assets/img/posts/p3-full.jpg" data-lightbox title="Ejemplo de lightbox activo en la página">
+          <img src="assets/img/posts/p3-full.jpg" alt="Pantalla mostrando una imagen ampliada en lightbox">
         </a>
-        <figcaption>Haz clic en la imagen para ampliarla.</figcaption>
+        <figcaption>La interacción es discreta y no necesita dependencias externas.</figcaption>
       </figure>
 
-      <p>Más contenido…</p>
+      <p>Estas piezas mejoran la experiencia sin aumentar apenas el peso de la página.</p>
     </article>
   </main>
 
