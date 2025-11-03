@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JS mínimo para dar vida a tu web – Mi Blog</title>
-  <meta name="description" content="Interacciones básicas en JavaScript: menú móvil accesible, lightbox de imágenes y botón para volver arriba.">
+  <title>Construyendo la app: retos y aprendizajes – Finanzas Inteligentes</title>
+  <meta name="description" content="Arquitectura, tecnologías y decisiones de diseño del proyecto de finanzas con IA: OCR, clasificación de gastos, API, persistencia y panel. Retos técnicos y siguientes pasos.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -12,7 +12,7 @@
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="./">Mi Blog</a>
+      <a class="logo" href="./">Finanzas Inteligentes</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
       <ul id="nav-list" class="nav-list">
         <li><a href="./">Inicio</a></li>
@@ -23,32 +23,82 @@
   <main class="container post">
     <article>
       <header>
-        <h1>JS mínimo para dar vida a tu web</h1>
-        <p class="post-meta">Publicado el 5 de noviembre de 2025 · <span class="badge">JavaScript</span></p>
+        <h1>Construyendo la app: retos y aprendizajes</h1>
+        <p class="post-meta">Publicado el 5 de noviembre de 2025 · <span class="badge">Desarrollo</span></p>
       </header>
 
-      <p>Sin frameworks podemos cubrir interacciones típicas: abrir/cerrar el menú móvil, mostrar un lightbox al pulsar una imagen y un botón de “volver arriba”.</p>
+      <p>En esta entrada resumo las <strong>decisiones técnicas</strong> y los <strong>retos</strong> que estoy encontrando al construir la aplicación. El objetivo es mantener una base sólida y extensible, sin sobredimensionar el proyecto.</p>
 
-      <h2>Qué hace nuestro JS</h2>
+      <h2>Arquitectura en capas (simple y mantenible)</h2>
+      <ul>
+        <li><strong>Ingesta:</strong> importación de <em>CSV</em> bancarios y lectura <em>OCR</em> de tickets/facturas.</li>
+        <li><strong>Procesado:</strong> limpieza/normalización, reglas de negocio y <em>clasificación</em> (reglas + IA ligera).</li>
+        <li><strong>API/Servicio:</strong> operaciones sobre movimientos, categorías y métricas (REST).</li>
+        <li><strong>Presentación:</strong> panel con KPIs y vistas de detalle (inicialmente web simple; opción a app nativa después).</li>
+      </ul>
+
+      <h2>Tecnologías clave</h2>
+      <ul>
+        <li><strong>Backend:</strong> Java (Spring Boot) para servicios REST y lógica de negocio.</li>
+        <li><strong>Persistencia:</strong> PostgreSQL en desarrollo; SQLite como opción local “portátil”.</li>
+        <li><strong>OCR:</strong> Tesseract (local) como base; interfaz preparada para alternar con un proveedor cloud si mejora calidad.</li>
+        <li><strong>Clasificación:</strong> enfoque mixto:
+          <ul>
+            <li><em>Reglas deterministas</em> (MCC, nombre comercio, patrones).</li>
+            <li><em>Modelo ligero</em> entrenable con descripciones y feedback del usuario.</li>
+          </ul>
+        </li>
+        <li><strong>Frontend:</strong> HTML/CSS/JS minimalista para el panel inicial (tablas, filtros, gráficos sencillos).</li>
+      </ul>
+
+      <h2>Modelo de datos (mínimo necesario)</h2>
+      <ul>
+        <li><strong>Movimiento:</strong> fecha, importe, signo, descripción, comercio, fuente (OCR/CSV), id categoría, etiquetas, aprobaciones.</li>
+        <li><strong>Categoría/Subcategoría:</strong> jerarquía sencilla y editable.</li>
+        <li><strong>Regla:</strong> condición → acción (asignar categoría, etiqueta, normalización).</li>
+        <li><strong>Métricas:</strong> vistas/consultas para cálculo de totales, medias móviles y desviaciones.</li>
+      </ul>
+
+      <h2>Retos principales (y cómo los estoy abordando)</h2>
       <ol>
-        <li><strong>Menú móvil:</strong> alterna la clase <code>.open</code> y actualiza <code>aria-expanded</code>.</li>
-        <li><strong>Lightbox:</strong> escucha clicks en elementos con <code>data-lightbox</code> y muestra un overlay.</li>
-        <li><strong>Scroll-top:</strong> aparece al bajar y hace scroll suave al inicio.</li>
+        <li><strong>OCR inconsistente:</strong> tickets arrugados o borrosos.  
+          <em>Mitigación:</em> preprocesado de imagen (contraste/umbral), plantillas por comercio repetido y confirmación asistida.</li>
+        <li><strong>Clasificación ambigua:</strong> descripciones diferentes para el mismo comercio.  
+          <em>Mitigación:</em> normalización de cadenas, alias por comercio y aprendizaje con correcciones del usuario.</li>
+        <li><strong>Privacidad:</strong> datos sensibles.  
+          <em>Mitigación:</em> almacenamiento local por defecto, exportación/importación y borrado completo con un clic.</li>
+        <li><strong>Experiencia de uso:</strong> demasiadas opciones abruman.  
+          <em>Mitigación:</em> panel con <strong>pocos KPIs útiles</strong> y acciones claras (revisar, confirmar, corregir).</li>
       </ol>
 
       <figure>
-        <a href="assets/img/posts/p3-full.jpg" data-lightbox title="Ejemplo de lightbox activo en la página">
-          <img src="assets/img/posts/p3-full.jpg" alt="Pantalla mostrando una imagen ampliada en lightbox">
+        <a href="assets/img/posts/p3-full.jpg" data-lightbox title="Vista conceptual del panel: KPIs, categorías principales y movimientos recientes">
+          <img src="assets/img/posts/p3-full.jpg" alt="Mock del panel con KPIs de gasto/ahorro, categorías y movimientos">
         </a>
-        <figcaption>La interacción es discreta y no necesita dependencias externas.</figcaption>
+        <figcaption>Empezar simple: KPIs esenciales, lista reciente y acceso rápido a correcciones.</figcaption>
       </figure>
 
-      <p>Estas piezas mejoran la experiencia sin aumentar apenas el peso de la página.</p>
+      <h2>Calidad y pruebas</h2>
+      <ul>
+        <li><strong>Tests de servicio</strong> para reglas de categorización y normalización de importes/fechas.</li>
+        <li><strong>Datos de demo</strong> (sintéticos) para validar el flujo completo sin exponer datos reales.</li>
+        <li><strong>CI básica</strong> (GitHub Actions) para compilar y ejecutar tests en cada cambio relevante.</li>
+      </ul>
+
+      <h2>Roadmap inmediato</h2>
+      <ol>
+        <li>MVP de importación CSV con normalización y reglas básicas.</li>
+        <li>OCR de tickets frecuentes + interfaz de confirmación rápida.</li>
+        <li>Panel con KPIs (ingresos, gasto por categoría, ahorro previsto) y alertas simples.</li>
+        <li>Entrenamiento incremental del clasificador con feedback del usuario.</li>
+      </ol>
+
+      <p>La prioridad es <strong>entregar valor</strong> desde el primer uso: registrar con pocos clics, entender en segundos y anticipar desvíos a tiempo. A partir de ahí, iterar sin romper lo que ya funciona.</p>
     </article>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
-  <footer class="site-footer">© 2025 Mi Blog – Actividad 1</footer>
+  <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
 </body>
