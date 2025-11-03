@@ -1,0 +1,47 @@
+/* layout.css: cabecera, grid, footer, diseño general */
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(10,13,28,.75);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #1f2440;
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:10px var(--space);
+}
+.logo{font-weight:700;color:var(--ink);letter-spacing:.4px}
+.nav-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border:1px solid #283054;
+  background:#141932;color:var(--ink);border-radius:12px;
+}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:16px}
+.nav-list a{color:var(--muted)}
+@media (max-width:780px){
+  .nav-list{
+    position:absolute;inset:56px var(--space) auto var(--space);
+    flex-direction:column;padding:14px;
+    background:#12162b;border:1px solid #232a47;border-radius:16px;
+    display:none;
+  }
+  .nav-list.open{display:flex}
+}
+
+/* hero opcional */
+.hero{padding:32px 0}
+.hero .card{
+  background:linear-gradient(135deg,#121734,#0e132b);
+  border:1px solid #222a4a;border-radius:var(--radius);
+  padding:clamp(16px,4vw,28px);
+}
+
+/* listado de posts */
+.posts{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:980px){.posts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.posts{grid-template-columns:1fr}}
+
+/* footer */
+.site-footer{
+  margin-top:40px;padding:24px 0;color:#a9b2c9;
+  border-top:1px solid #1f2440;text-align:center;background:#0d1122;
+}
