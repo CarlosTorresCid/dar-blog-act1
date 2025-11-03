@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entrada 1 – Mi Blog</title>
+  <title>CSS responsive sin frameworks – Mi Blog</title>
+  <meta name="description" content="Cómo lograr un diseño responsive con CSS puro: variables, grid/flex, tipografías fluidas e imágenes optimizadas.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -22,21 +23,28 @@
   <main class="container post">
     <article>
       <header>
-        <h1>Título de la entrada 1</h1>
-        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">General</span></p>
+        <h1>CSS responsive sin frameworks</h1>
+        <p class="post-meta">Publicado el 4 de noviembre de 2025 · <span class="badge">CSS</span></p>
       </header>
 
-      <p>Introduce aquí el contenido de tu entrada. Añade varios párrafos, listas, etc.</p>
+      <p>Con unas pocas técnicas podemos cubrir la mayoría de casos sin depender de librerías pesadas: variables CSS, <em>flexbox</em>, <em>grid</em> y tamaños fluidos.</p>
+
+      <h2>Buenas prácticas</h2>
+      <ul>
+        <li>Define <strong>variables</strong> para colores/espaciados y reutilízalas.</li>
+        <li>Usa <strong>grid/flex</strong> para componer tarjetas y columnas.</li>
+        <li>Limita el ancho de texto a ~70 caracteres para legibilidad.</li>
+        <li>Optimiza imágenes y añade <code>loading="lazy"</code>.</li>
+      </ul>
 
       <figure>
-        <!-- Para lightbox: usa data-lightbox apuntando a la imagen grande -->
-        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Imagen ampliada de la entrada 1">
-          <img src="assets/img/posts/p1-full.jpg" alt="Imagen de la entrada 1">
+        <a href="assets/img/posts/p2-full.jpg" data-lightbox title="Diseño responsive con grid de tarjetas">
+          <img src="assets/img/posts/p2-full.jpg" alt="Ejemplo de grid responsive de tarjetas">
         </a>
-        <figcaption>Haz clic en la imagen para ampliarla.</figcaption>
+        <figcaption>El grid de la home pasa de 3 columnas a 2 y a 1 en móvil.</figcaption>
       </figure>
 
-      <p>Más contenido…</p>
+      <p>Los <code>@media</code> en nuestro proyecto ajustan el número de columnas y el comportamiento del menú para pantallas pequeñas.</p>
     </article>
   </main>
 
