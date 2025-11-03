@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrada 1 – Mi Blog</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="./">Mi Blog</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="./">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container post">
+    <article>
+      <header>
+        <h1>Título de la entrada 1</h1>
+        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">General</span></p>
+      </header>
+
+      <p>Introduce aquí el contenido de tu entrada. Añade varios párrafos, listas, etc.</p>
+
+      <figure>
+        <!-- Para lightbox: usa data-lightbox apuntando a la imagen grande -->
+        <a href="assets/img/posts/p1-full.jpg" data-lightbox title="Imagen ampliada de la entrada 1">
+          <img src="assets/img/posts/p1-full.jpg" alt="Imagen de la entrada 1">
+        </a>
+        <figcaption>Haz clic en la imagen para ampliarla.</figcaption>
+      </figure>
+
+      <p>Más contenido…</p>
+    </article>
+  </main>
+
+  <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
+  <footer class="site-footer">© 2025 Mi Blog – Actividad 1</footer>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lightbox.js" defer></script>
+</body>
+</html>
