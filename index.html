@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Blog – Actividad 1</title>
+  <meta name="description" content="Blog de la Actividad 1 (HTML, CSS y JavaScript)">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="./">Mi Blog</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="./">Inicio</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1>Últimas entradas</h1>
+        <p class="excerpt">Este blog demuestra HTML, CSS y JavaScript con un diseño responsive y pequeñas interacciones.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="latest">
+      <h2 id="latest" class="sr-only">Entradas</h2>
+      <div class="posts">
+        <article class="card">
+          <a href="post-1.html">
+            <img src="assets/img/posts/p1-thumb.jpg" alt="Vista previa de la entrada 1" loading="lazy">
+            <h2>Título entrada 1</h2>
+            <p class="excerpt">Resumen corto de la entrada 1...</p>
+            <span class="badge">General</span>
+          </a>
+        </article>
+        <article class="card">
+          <a href="post-2.html">
+            <img src="assets/img/posts/p2-thumb.jpg" alt="Vista previa de la entrada 2" loading="lazy">
+            <h2>Título entrada 2</h2>
+            <p class="excerpt">Resumen corto de la entrada 2...</p>
+            <span class="badge">Tips</span>
+          </a>
+        </article>
+        <article class="card">
+          <a href="post-3.html">
+            <img src="assets/img/posts/p3-thumb.jpg" alt="Vista previa de la entrada 3" loading="lazy">
+            <h2>Título entrada 3</h2>
+            <p class="excerpt">Resumen corto de la entrada 3...</p>
+            <span class="badge">Noticias</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="article" style="margin-top:24px">
+      <h2>Sobre mí</h2>
+      <p>Breve párrafo sobre el autor del blog y el objetivo de la práctica.</p>
+    </section>
+
+    <section id="contacto" class="article" style="margin-top:24px">
+      <h2>Contacto</h2>
+      <p>Puedes escribirme a nombre@correo.com.</p>
+    </section>
+  </main>
+
+  <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
+  <footer class="site-footer">© 2025 Mi Blog – Actividad 1</footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lightbox.js" defer></script>
+</body>
+</html>
