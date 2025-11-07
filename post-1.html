@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
       <a class="logo" href="./">Finanzas Inteligentes</a>
@@ -20,13 +21,20 @@
     </nav>
   </header>
 
+  <!-- Encabezado ancho completo -->
+  <section class="post-hero">
+    <div class="container">
+      <h1 class="post-title">Del Excel a la IA: el nacimiento de una idea</h1>
+      <p class="post-meta">
+        <span class="meta-item date">Publicado el 3 de noviembre de 2025</span>
+        <span class="meta-item tag">Proyecto</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido -->
   <main class="container post">
     <article>
-      <header>
-        <h1>Del Excel a la IA: el nacimiento de una idea</h1>
-        <p class="post-meta">Publicado el 3 de noviembre de 2025 · <span class="badge">Proyecto</span></p>
-      </header>
-
       <p>Durante años he llevado mis finanzas con hojas de cálculo: ingresos, gastos fijos, gasolina, comida, tarjetas… Funcionaba, pero tenía tres problemas: <strong>tiempo</strong> (anotar todo es pesado), <strong>errores</strong> (fórmulas y categorías inconsistentes) y <strong>falta de visión</strong> (difícil ver tendencias y anticipar meses complicados). De esa frustración nace el objetivo de mi TFG: <strong>convertir ese Excel en una aplicación inteligente</strong> que automatice el registro, clasifique movimientos y me ayude a tomar decisiones.</p>
 
       <h2>Dolores reales → requisitos reales</h2>
@@ -34,7 +42,7 @@
         <li><strong>Registrar sin teclear:</strong> capturar datos desde <em>facturas/fotos</em> (OCR) y <em>extractos bancarios</em> (CSV).</li>
         <li><strong>Clasificación automática:</strong> detectar categorías (supermercado, combustible, ocio…) y subcategorías.</li>
         <li><strong>Inteligencia práctica:</strong> predicciones de gasto/ahorro y alertas de desvíos respecto al plan.</li>
-        <li><strong>Privacidad:</strong> los datos son sensibles; priorizar almacenamiento local y control del usuario.</li>
+        <li><strong>Privacidad:</strong> priorizar almacenamiento local y control del usuario.</li>
       </ul>
 
       <h2>De la idea al enfoque técnico</h2>
@@ -57,9 +65,47 @@
         <li>Primer clasificador de <strong>categorías</strong> (base de reglas + IA ligera).</li>
         <li>Panel mínimo con <strong>KPIs</strong> (gasto/ingreso, ahorro previsto, top categorías).</li>
       </ol>
-
-      <p>Este blog es el diario del proceso: decisiones, avances, tropiezos y lo aprendido al transformar un Excel en una aplicación con <strong>IA aplicada a finanzas personales</strong>.</p>
     </article>
+
+    <!-- Navegación posts -->
+    <nav class="post-pager" aria-label="Navegación de artículos">
+      <a href="./">← Inicio</a>
+      <a href="post-2.html">Siguiente →</a>
+    </nav>
+
+    <!-- Artículos recientes -->
+    <section class="recent" aria-labelledby="recent-title-1">
+      <h2 id="recent-title-1">Artículos recientes</h2>
+      <div class="recent-grid">
+        <article class="card">
+          <span class="badge">IA</span>
+          <a href="post-2.html">
+            <img src="assets/img/posts/p2-thumb.jpg" alt="Miniatura post 2">
+            <h2>IA para tus gastos</h2>
+          </a>
+          <p class="excerpt">OCR, clasificación y predicción.</p>
+          <a class="read-more" href="post-2.html">Leer más</a>
+        </article>
+        <article class="card">
+          <span class="badge">Desarrollo</span>
+          <a href="post-3.html">
+            <img src="assets/img/posts/p3-thumb.jpg" alt="Miniatura post 3">
+            <h2>Retos y aprendizajes</h2>
+          </a>
+          <p class="excerpt">Tecnologías y decisiones.</p>
+          <a class="read-more" href="post-3.html">Leer más</a>
+        </article>
+        <article class="card">
+          <span class="badge">Proyecto</span>
+          <a href="post-1.html">
+            <img src="assets/img/posts/p1-thumb.jpg" alt="Miniatura post 1">
+            <h2>Del Excel a la IA</h2>
+          </a>
+          <p class="excerpt">De Excel a app inteligente.</p>
+          <a class="read-more" href="post-1.html">Leer más</a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
