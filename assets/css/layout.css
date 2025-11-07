@@ -14,6 +14,13 @@
   display:inline-flex;align-items:center;justify-content:center;
   width:42px;height:42px;border:1px solid #2A2A2A;
   background:#1E1E1E;color:var(--ink);border-radius:12px;
+/* Ocultar el botón de menú en pantallas grandes */
+@media (min-width:781px){
+  .nav-toggle{display:none;}
+  .nav-list{display:flex !important;}
+}
+
+
 }
 .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:18px}
 .nav-list a{color:var(--muted);font-weight:500}
