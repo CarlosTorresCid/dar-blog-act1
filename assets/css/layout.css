@@ -146,3 +146,27 @@
   background: var(--surface);
   text-align: center;
 }
+/* === FIX: Fondo claro en posts individuales === */
+body,
+.post-content,
+article.post {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* Aseguramos contraste de encabezados */
+.post h1, .post h2, .post h3 {
+  color: var(--primary);
+}
+
+/* Aseguramos color de fecha y meta */
+.post-meta {
+  color: var(--muted);
+}
+
+/* Evita superposiciones oscuras previas */
+.post, .post-content {
+  box-shadow: none;
+  border: none;
+}
+
