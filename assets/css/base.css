@@ -2,7 +2,7 @@
 :root{
   --bg:#121212;          /* fondo principal */
   --paper:#1E1E1E;       /* tarjetas/zonas */
-  --ink:#F9FAFB;         /* texto principal */
+
   --muted:#A1A1AA;       /* texto secundario */
   --accent:#FB923C;      /* acento */
   --accent-hover:#F97316;/* acento hover */
