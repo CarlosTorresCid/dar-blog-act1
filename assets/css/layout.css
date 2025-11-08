@@ -1,172 +1,82 @@
+/* layout.css — estructura y layout */
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow);
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow);
 }
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px var(--space);
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px var(--space);
 }
-
-.logo {
-  font-weight: 700;
-  color: var(--primary);
-  font-size: 1.2rem;
-  letter-spacing: .4px;
-}
+.logo{font-weight:700;color:var(--primary);font-size:1.2rem;letter-spacing:.4px}
 
 /* Menú */
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--ink);
-  border-radius: 12px;
+.nav-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border:1px solid var(--border);
+  background:var(--surface-2);color:var(--ink);border-radius:12px;
 }
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+.nav-list a{color:var(--muted);font-weight:500}
+.nav-list a:hover{color:var(--primary)}
 
-.nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 18px;
-}
-
-.nav-list a {
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.nav-list a:hover {
-  color: var(--primary);
-}
-
-/* Responsive menú desplegable */
-@media (max-width: 780px) {
-  .nav-list {
-    position: absolute;
-    inset: 56px var(--space) auto var(--space);
-    flex-direction: column;
-    padding: 16px;
-    background: var(--surface);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    display: none;
+/* Solo móvil: desplegable */
+@media (max-width:780px){
+  .nav-list{
+    position:absolute;inset:56px var(--space) auto var(--space);
+    flex-direction:column;padding:16px;background:var(--surface);
+    border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);
+    display:none;
   }
-
-  .nav-list.open {
-    display: flex;
-  }
+  .nav-list.open{display:flex}
+}
+/* Ocultar hamburguesa en escritorio */
+@media (min-width:781px){
+  .nav-toggle{display:none !important}
+  .nav-list{display:flex !important;position:static;flex-direction:row;background:transparent;border:none;padding:0}
 }
 
-/* Ocultar el botón de menú en escritorio */
-@media (min-width: 781px) {
-  .nav-toggle {
-    display: none !important;
-  }
-  .nav-list {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
-}
+/* Héroe */
+.hero{padding:48px 0;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.6rem;color:var(--primary)}
+.hero p{color:var(--muted);max-width:680px;margin:0 auto}
 
-/* Héroe principal */
-.hero {
-  padding: 48px 0;
-  text-align: center;
-}
+/* Grid entradas */
+.posts{display:grid;gap:28px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:980px){.posts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.posts{grid-template-columns:1fr}}
 
-.hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: .6rem;
-  color: var(--primary);
+/* Tarjetas */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:28px;transition:transform .2s ease;position:relative;
 }
-
-.hero p {
-  color: var(--muted);
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-/* Grid de posts */
-.posts {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 980px) {
-  .posts {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .posts {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Tarjetas de posts */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 28px;
-  transition: transform .2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
+.card:hover{transform:translateY(-4px)}
+.card h2{margin-top:12px}
 
 /* Footer */
-.site-footer {
-  margin-top: 50px;
-  padding: 24px 0;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  background: var(--surface);
-  text-align: center;
-}
-/* === FIX: Fondo claro en posts individuales === */
-body,
-.post-content,
-article.post {
-  background: var(--bg);
-  color: var(--ink);
+.site-footer{
+  margin-top:50px;padding:24px 0;color:var(--muted);
+  border-top:1px solid var(--border);background:var(--surface);text-align:center;
 }
 
-/* Aseguramos contraste de encabezados */
-.post h1, .post h2, .post h3 {
-  color: var(--primary);
-}
+/* Post (páginas internas) */
+.post-hero{background:var(--surface);border-bottom:1px solid var(--border);padding:28px 0;margin-bottom:24px}
+.post-title{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--primary);margin:0}
+.post{padding-bottom:24px}
+.post p{max-width:75ch}
 
-/* Aseguramos color de fecha y meta */
-.post-meta {
-  color: var(--muted);
-}
+/* Asegurar contraste en posts */
+.post h1,.post h2,.post h3{color:var(--primary)}
+.post .post-meta{color:var(--muted)}
 
-/* Evita superposiciones oscuras previas */
-.post, .post-content {
-  box-shadow: none;
-  border: none;
+/* Botón subir */
+.scroll-top{
+  position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:12px;
+  background:var(--primary);color:var(--ink-inv);border:1px solid var(--primary);
+  display:none;align-items:center;justify-content:center;font-weight:700;
 }
-
+.scroll-top.show{display:flex}
