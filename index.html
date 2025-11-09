@@ -30,6 +30,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding-bottom: 15px;
+      position: relative; /* Necesario para posicionar el badge */
     }
 
     .card:hover {
@@ -42,7 +43,8 @@
       height: 200px;
       object-fit: cover;
       display: block;
-      border-bottom: 3px solid #e67e22; /* tono naranja */
+      border-bottom: 3px solid #e67e22;
+      border-radius: 10px 10px 0 0;
     }
 
     .card h2 {
@@ -73,20 +75,45 @@
       background: #ff944d;
     }
 
+    /* === Etiquetas (badges) === */
     .badge {
-      background: #ff944d;
-      color: #000;
-      font-weight: 600;
-      border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 0.85rem;
       position: absolute;
       top: 12px;
       right: 12px;
+      background: #ffb47d;
+      color: #2b2b2b;
+      font-weight: 600;
+      border-radius: 16px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+      z-index: 2;
     }
+
+    /* Colores según categoría */
+    .card:nth-child(1) .badge { background: #ffb47d; } /* Proyecto */
+    .card:nth-child(2) .badge { background: #8ecaff; } /* IA */
+    .card:nth-child(3) .badge { background: #9cffad; } /* Desarrollo */
 
     .card a {
       text-decoration: none;
+      position: relative;
+      display: block;
+    }
+
+    /* Responsive: mejora visual en pantallas pequeñas */
+    @media (max-width: 600px) {
+      .card h2 {
+        font-size: 1.2rem;
+      }
+      .card img {
+        height: 180px;
+      }
+      .badge {
+        font-size: 0.75rem;
+        top: 10px;
+        right: 10px;
+      }
     }
   </style>
 </head>
