@@ -5,137 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Finanzas Inteligentes – Actividad 1</title>
   <meta name="description" content="Blog de la Actividad 1: desarrollo de una app de finanzas personales con inteligencia artificial.">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
-
-  <style>
-    /* === Ajustes de las cards e imágenes === */
-    .posts {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin-top: 40px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 15px;
-      position: relative;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Contenedor de imagen con velo */
-    .card a {
-      position: relative;
-      display: block;
-      text-decoration: none;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 3px solid #e67e22;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .card h2 {
-      font-size: 1.3rem;
-      color: #ff944d;
-      margin: 15px;
-    }
-
-    .card p.excerpt {
-      color: #ccc;
-      margin: 0 15px 10px;
-      line-height: 1.5;
-    }
-
-    .card .read-more {
-      align-self: center;
-      background: #e67e22;
-      color: #fff;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .card .read-more:hover {
-      background: #ff944d;
-    }
-
-    /* === Badges (etiquetas cálidas) === */
-    .badge {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      font-weight: 600;
-      border-radius: 30px;
-      padding: 6px 14px;
-      letter-spacing: 0.3px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      z-index: 2;
-    }
-
-    .card:nth-child(1) .badge {
-      background: #e67e22;
-      color: #fff;
-    }
-
-    .card:nth-child(2) .badge {
-      background: #ff944d;
-      color: #2b2b2b;
-    }
-
-    .card:nth-child(3) .badge {
-      background: #f4c391;
-      color: #2b2b2b;
-    }
-
-    .card:hover .badge {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .card h2 {
-        font-size: 1.2rem;
-      }
-      .card img {
-        height: 180px;
-      }
-      .badge {
-        font-size: 0.75rem;
-        top: 10px;
-        right: 10px;
-        padding: 5px 10px;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- ===== HEADER ===== -->
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
       <a class="logo" href="./">Finanzas Inteligentes</a>
@@ -148,18 +23,16 @@
     </nav>
   </header>
 
-  <!-- ===== MAIN ===== -->
   <main class="container">
-    <!-- HERO -->
+    <!-- Hero -->
     <section class="hero">
       <h1>Finanzas Inteligentes – Diario de un Proyecto con IA</h1>
       <p>Explorando cómo la inteligencia artificial puede ayudarnos a entender, automatizar y mejorar la gestión de nuestras finanzas personales.</p>
     </section>
 
-    <!-- LISTADO DE POSTS -->
+    <!-- Listado -->
     <section aria-label="Últimas entradas">
       <div class="posts">
-
         <!-- Card 1 -->
         <article class="card">
           <span class="badge">Proyecto</span>
@@ -192,19 +65,32 @@
           <p class="excerpt">Las tecnologías, decisiones y obstáculos detrás del desarrollo del proyecto.</p>
           <a class="read-more" href="post-3.html" aria-label="Leer más sobre el desarrollo">Leer más</a>
         </article>
-
       </div>
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
 
-  <!-- ===== BOTÓN SCROLL TOP ===== -->
+  <!-- Scroll to top (también en el index) -->
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
 
-  <!-- ===== JS ===== -->
+  <!-- JS -->
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
+
+  <!-- ScrollTop logic (si tu main.js no lo incluye) -->
+  <script>
+    (function(){
+      const btn = document.getElementById('scrollTop');
+      if(!btn) return;
+      const toggle = () => {
+        if (window.scrollY > 300) btn.classList.add('show');
+        else btn.classList.remove('show');
+      };
+      window.addEventListener('scroll', toggle, { passive: true });
+      toggle();
+      btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    })();
+  </script>
 </body>
 </html>
