@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi Blog – Actividad 1</title>
-  <meta name="description" content="Blog de la Actividad 1 (HTML, CSS y JavaScript)">
+  <title>Finanzas Inteligentes – Diario de un Proyecto con IA</title>
+  <meta name="description" content="Blog personal sobre el desarrollo del TFG: una aplicación de finanzas personales con inteligencia artificial.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="./">Mi Blog</a>
+      <a class="logo" href="./">Finanzas Inteligentes</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
       <ul id="nav-list" class="nav-list">
         <li><a href="./">Inicio</a></li>
@@ -21,54 +22,61 @@
       </ul>
     </nav>
   </header>
-<main class="container">
-  <section class="hero">
-    <h1>Finanzas Inteligentes – Diario de un Proyecto con IA</h1>
-    <p>Explorando cómo la inteligencia artificial puede ayudarnos a entender, automatizar y mejorar la gestión de nuestras finanzas personales.</p>
-  </section>
 
-  <section aria-label="Últimas entradas">
-    <div class="posts">
-      <!-- Card 1 -->
-      <article class="card">
-        <span class="badge">Proyecto</span>
-        <a href="post-1.html" aria-label="Leer la entrada: Del Excel a la IA: el nacimiento de una idea">
-          <img src="assets/img/posts/p1-thumb.jpg" alt="Miniatura del artículo sobre el origen del proyecto de finanzas con IA" loading="lazy">
-          <h2>Del Excel a la IA: el nacimiento de una idea</h2>
-        </a>
-        <p class="excerpt">Cómo una hoja de cálculo se transformó en una aplicación inteligente de gestión financiera.</p>
-        <a class="read-more" href="post-1.html" aria-label="Leer más sobre Del Excel a la IA">Leer más</a>
-      </article>
+  <!-- ===== MAIN ===== -->
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Finanzas Inteligentes – Diario de un Proyecto con IA</h1>
+      <p>Explorando cómo la inteligencia artificial puede ayudarnos a entender, automatizar y mejorar la gestión de nuestras finanzas personales.</p>
+    </section>
 
-      <!-- Card 2 -->
-      <article class="card">
-        <span class="badge">IA</span>
-        <a href="post-2.html" aria-label="Leer la entrada: Cómo la IA puede ayudarte a controlar tus gastos">
-          <img src="assets/img/posts/p2-thumb.jpg" alt="Miniatura del artículo sobre IA en finanzas personales" loading="lazy">
-          <h2>Cómo la IA puede ayudarte a controlar tus gastos</h2>
-        </a>
-        <p class="excerpt">Del reconocimiento automático de facturas a la predicción de tu ahorro mensual.</p>
-        <a class="read-more" href="post-2.html" aria-label="Leer más sobre IA y gastos">Leer más</a>
-      </article>
+    <!-- LISTADO DE POSTS -->
+    <section aria-label="Últimas entradas">
+      <div class="posts">
+        <!-- Card 1 -->
+        <article class="card">
+          <span class="badge">Proyecto</span>
+          <a href="post-1.html" aria-label="Leer la entrada: Del Excel a la IA: el nacimiento de una idea">
+            <img src="assets/img/post1.png" alt="Miniatura del artículo sobre el origen del proyecto de finanzas con IA" loading="lazy">
+            <h2>Del Excel a la IA: el nacimiento de una idea</h2>
+          </a>
+          <p class="excerpt">Cómo una hoja de cálculo se transformó en una aplicación inteligente de gestión financiera.</p>
+          <a class="read-more" href="post-1.html" aria-label="Leer más sobre Del Excel a la IA">Leer más</a>
+        </article>
 
-      <!-- Card 3 -->
-      <article class="card">
-        <span class="badge">Desarrollo</span>
-        <a href="post-3.html" aria-label="Leer la entrada: Construyendo la app: retos y aprendizajes">
-          <img src="assets/img/posts/p3-thumb.jpg" alt="Miniatura del artículo sobre desarrollo de la app de finanzas" loading="lazy">
-          <h2>Construyendo la app: retos y aprendizajes</h2>
-        </a>
-        <p class="excerpt">Las tecnologías, decisiones y obstáculos detrás del desarrollo del proyecto.</p>
-        <a class="read-more" href="post-3.html" aria-label="Leer más sobre el desarrollo">Leer más</a>
-      </article>
-    </div>
-  </section>
-</main>
+        <!-- Card 2 -->
+        <article class="card">
+          <span class="badge">IA</span>
+          <a href="post-2.html" aria-label="Leer la entrada: Cómo la IA puede ayudarte a controlar tus gastos">
+            <img src="assets/img/posts/p2-thumb.jpg" alt="Miniatura del artículo sobre IA en finanzas personales" loading="lazy">
+            <h2>Cómo la IA puede ayudarte a controlar tus gastos</h2>
+          </a>
+          <p class="excerpt">Del reconocimiento automático de facturas a la predicción de tu ahorro mensual.</p>
+          <a class="read-more" href="post-2.html" aria-label="Leer más sobre IA y gastos">Leer más</a>
+        </article>
 
+        <!-- Card 3 -->
+        <article class="card">
+          <span class="badge">Desarrollo</span>
+          <a href="post-3.html" aria-label="Leer la entrada: Construyendo la app: retos y aprendizajes">
+            <img src="assets/img/posts/p3-thumb.jpg" alt="Miniatura del artículo sobre desarrollo de la app de finanzas" loading="lazy">
+            <h2>Construyendo la app: retos y aprendizajes</h2>
+          </a>
+          <p class="excerpt">Las tecnologías, decisiones y obstáculos detrás del desarrollo del proyecto.</p>
+          <a class="read-more" href="post-3.html" aria-label="Leer más sobre el desarrollo">Leer más</a>
+        </article>
+      </div>
+    </section>
+  </main>
 
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
+
+  <!-- ===== BOTÓN SCROLL TOP ===== -->
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
-  <footer class="site-footer">© 2025 Mi Blog – Actividad 1</footer>
 
+  <!-- ===== JS ===== -->
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
 </body>
