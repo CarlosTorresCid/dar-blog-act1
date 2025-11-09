@@ -130,25 +130,82 @@
   .post-hero .container { bottom: 18px; }
 }
 
-/* === Etiquetas (badges) sobre las imágenes de las cards === */
+/* === Tarjetas (cards) mejoradas === */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: #161616;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 18px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.5);
+}
+
+/* Imagen con velo */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  border-bottom: 2px solid #b5532d; /* tono cobre */
+}
+
+.card img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* velo oscuro */
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.card:hover img::after {
+  background: rgba(0,0,0,0.2);
+}
+
+/* Badges con colores corporativos */
 .badge {
   position: absolute;
-  top: 22px;         /* antes 14px → se baja un poco */
-  right: 18px;       /* antes 14px → se separa más del borde */
-  background: #ff944d;
-  color: #2b2b2b;
-  font-weight: 700;
-  border-radius: 20px;
+  top: 20px;
+  right: 20px;
+  background: #b5532d; /* cobre cálido */
+  color: #fff8e6;      /* beige claro */
+  font-weight: 600;
+  border-radius: 18px;
   padding: 6px 14px;
   font-size: 0.85rem;
-  letter-spacing: 0.2px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(6px);
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   z-index: 3;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover .badge {
+  transform: translateY(-2px);
+  background: #c85f35; /* un poco más claro al hover */
 }
 
 /* Colores por categoría */
-.card:nth-child(1) .badge { background: #ffb47d; } /* Proyecto */
-.card:nth-child(2) .badge { background: #8ecaff; } /* IA */
-.card:nth-child(3) .badge { background: #9cffad; } /* Desarrollo */
+.card:nth-child(1) .badge { background: #c94b3d; } /* Rojo cereza para Proyecto */
+.card:nth-child(2) .badge { background: #b5532d; } /* Cobre para IA */
+.card:nth-child(3) .badge { background: #d8b892; color:#2b2b2b; } /* Beige claro para Desarrollo */
+
+/* Ajuste responsive */
+@media (max-width: 600px) {
+  .card img { height: 180px; }
+  .badge {
+    top: 12px;
+    right: 12px;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}
