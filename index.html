@@ -5,10 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Finanzas Inteligentes – Actividad 1</title>
   <meta name="description" content="Blog de la Actividad 1: desarrollo de una app de finanzas personales con inteligencia artificial.">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
+
+  <style>
+    /* === Ajustes de las cards e imágenes === */
+    .posts {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 15px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 3px solid #e67e22; /* tono naranja */
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      color: #ff944d;
+      margin: 15px;
+    }
+
+    .card p.excerpt {
+      color: #ccc;
+      margin: 0 15px 10px;
+      line-height: 1.5;
+    }
+
+    .card .read-more {
+      align-self: center;
+      background: #e67e22;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .card .read-more:hover {
+      background: #ff944d;
+    }
+
+    .badge {
+      background: #ff944d;
+      color: #000;
+      font-weight: 600;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+
+    .card a {
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
   <!-- ===== HEADER ===== -->
   <header class="site-header">
