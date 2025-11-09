@@ -1,52 +1,77 @@
-/* components.css — piezas visuales */
+/* ===== Tarjetas (cards) ===== */
+.card{
+  position:relative; overflow:hidden;
+  background:#161616; border:1px solid #242424;
+  border-radius:16px; box-shadow:0 6px 14px rgba(0,0,0,.4);
+  transition:transform .3s ease, box-shadow .3s ease;
+  display:flex; flex-direction:column; justify-content:space-between;
+  padding-bottom:18px;
+}
+.card:hover{ transform:translateY(-5px); box-shadow:0 10px 22px rgba(0,0,0,.5); }
 
-/* Títulos de tarjetas y artículos */
-.card h2,
-.post h1,
-.post h2{color:var(--primary);font-weight:700}
+/* Imagen con relleno completo */
+.card a{ position:relative; display:block; text-decoration:none; }
+.card img{
+  width:100%; height:220px; object-fit:cover; display:block;
+  border-bottom:2px solid #b5532d; border-radius:10px 10px 0 0;
+}
 
-/* Badge de categoría (arriba derecha) */
+/* Titular y excerpt */
+.card h2{ font-size:1.3rem; color:#ff944d; margin:15px; }
+.card p.excerpt{ color:#ccc; margin:0 15px 12px; line-height:1.55; }
+
+/* Botón Leer más: mismo comportamiento en index y posts */
+.card .read-more, .post .read-more{
+  align-self:center; background:#e67e22; color:#fff; font-weight:600;
+  border:none; border-radius:10px; padding:12px 22px; text-decoration:none;
+  transition:background .25s ease, color .25s ease, transform .1s ease;
+}
+.card .read-more:hover, .post .read-more:hover{ background:#ff944d; color:#1a1a1a; }
+.card .read-more:active, .post .read-more:active{ transform:translateY(1px); }
+
+/* Badges (etiquetas) tonos naranjas */
 .badge{
-  position:absolute;top:14px;right:14px;
-  display:inline-flex;align-items:center;gap:6px;
-  padding:6px 10px;border-radius:999px;
-  background:var(--primary-200);color:var(--primary);
-  border:1px solid var(--primary-200);font-weight:600;font-size:.85rem;
+  position:absolute; top:18px; right:18px; z-index:2;
+  font-weight:700; border-radius:24px; padding:6px 14px; letter-spacing:.2px;
+  box-shadow:0 3px 10px rgba(0,0,0,.25);
 }
+.card:nth-child(1) .badge{ background:#ffb47d; color:#2b2b2b; } /* Proyecto */
+.card:nth-child(2) .badge{ background:#ff944d; color:#1a1a1a; } /* IA */
+.card:nth-child(3) .badge{ background:#f4c391; color:#2b2b2b; } /* Desarrollo */
+.card:hover .badge{ transform:translateY(-2px); }
 
-/* Botón “Leer más” */
-.read-more,.btn-primary{
-  display:inline-block;margin-top:14px;padding:10px 20px;border-radius:10px;
-  background:var(--primary);color:var(--ink-inv);font-weight:600;text-transform:uppercase;
-  letter-spacing:.3px;border:1px solid var(--primary);transition:background .2s, transform .1s;
+/* ===== Bloque Artículos recientes (en páginas de post) ===== */
+.recent-grid{
+  display:grid; gap:24px; grid-template-columns:repeat(3,1fr);
+  margin-top:18px;
 }
-.read-more:hover,.btn-primary:hover{background:var(--primary-600);transform:translateY(-1px)}
+@media (max-width:980px){ .recent-grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:620px){ .recent-grid{ grid-template-columns:1fr;} }
 
-/* Meta */
-.post-meta{color:var(--muted);font-size:.95rem;margin:.6rem 0 1.2rem}
-.post-meta i,.post-meta svg{color:var(--primary);margin-right:4px}
+.recent-grid .card a{ display:block; position:relative; }
+.recent-grid .card img{
+  width:100%; height:200px; object-fit:cover; display:block;
+  border-radius:10px 10px 0 0;
+}
+@media (max-width:600px){ .recent-grid .card img{ height:180px; } }
 
-/* Navegación anterior/siguiente */
-.post-pager{display:flex;justify-content:space-between;gap:20px;margin-top:40px}
+/* Navegación inferior de posts (si la usas) */
+.post-pager{
+  display:flex; justify-content:space-between; align-items:center;
+  margin:30px 0 10px;
+}
 .post-pager a{
-  background:var(--surface);border:1px solid var(--border);color:var(--primary);
-  padding:10px 18px;border-radius:10px;transition:.2s
+  border:1px solid #3a3a3a; color:#ff944d; padding:10px 16px; border-radius:12px;
+  text-decoration:none; background:#171717;
 }
-.post-pager a:hover{border-color:var(--primary-600);color:var(--primary-600)}
+.post-pager a:hover{ background:#222; border-color:#555; }
 
-/* Artículos recientes */
-.recent{margin-top:60px}
-.recent h2{color:var(--primary);text-align:center;margin-bottom:30px}
-.recent-grid{display:grid;gap:24px;grid-template-columns:repeat(3,1fr)}
-@media(max-width:980px){.recent-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.recent-grid{grid-template-columns:1fr}}
+/* Accesibilidad foco visible */
+a:focus, button:focus{ outline:2px dashed #ff944d; outline-offset:2px; }
 
-/* Lightbox overlay (para evitar “velo” extraño y dar control) */
-.lb{
-  position:fixed;inset:0;background:rgba(0,0,0,.75);
-  display:flex;align-items:center;justify-content:center;z-index:9999;
-  padding:24px;
+/* Ajustes responsive menores */
+@media (max-width:600px){
+  .card img{ height:200px; } /* cards del index */
+  .badge{ top:12px; right:12px; padding:5px 12px; font-size:.85rem; }
+  .card h2{ font-size:1.2rem; }
 }
-.lb figure{max-width:min(960px, 92vw)}
-.lb img{width:100%;height:auto;border-radius:12px}
-.lb figcaption{color:#fff;margin-top:10px;text-align:center;opacity:.9}
