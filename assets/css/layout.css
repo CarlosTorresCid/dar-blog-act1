@@ -129,3 +129,43 @@
   .post-hero .featured-image { height: 240px !important; }
   .post-hero .container { bottom: 18px; }
 }
+
+/* === Etiquetas (badges) sobre las imágenes de las cards === */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo general del badge */
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #ff944d; /* tono naranja cálido */
+  color: #2b2b2b;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  z-index: 3;
+}
+
+/* Colores específicos por categoría */
+.card:nth-child(1) .badge { background: #ffb47d; } /* Proyecto */
+.card:nth-child(2) .badge { background: #8ecaff; } /* IA */
+.card:nth-child(3) .badge { background: #9cffad; } /* Desarrollo */
+
+/* Ajustes responsive */
+@media (max-width: 600px) {
+  .badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}
+
