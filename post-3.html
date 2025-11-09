@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
       <a class="logo" href="./">Finanzas Inteligentes</a>
@@ -20,13 +21,28 @@
     </nav>
   </header>
 
+  <!-- Encabezado ancho completo con imagen -->
+  <section class="post-hero">
+    <img
+      src="assets/img/post3.png"
+      alt="Ilustración de desarrollo de software con diagramas y paneles"
+      class="featured-image"
+      width="1600"
+      height="400"
+      loading="eager"
+      decoding="async">
+    <div class="container">
+      <h1 class="post-title">Construyendo la app: retos y aprendizajes</h1>
+      <p class="post-meta">
+        <span class="meta-item date">Publicado el 5 de noviembre de 2025</span>
+        <span class="meta-item tag">Desarrollo</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido -->
   <main class="container post">
     <article>
-      <header>
-        <h1>Construyendo la app: retos y aprendizajes</h1>
-        <p class="post-meta">Publicado el 5 de noviembre de 2025 · <span class="badge">Desarrollo</span></p>
-      </header>
-
       <p>En esta entrada resumo las <strong>decisiones técnicas</strong> y los <strong>retos</strong> que estoy encontrando al construir la aplicación. El objetivo es mantener una base sólida y extensible, sin sobredimensionar el proyecto.</p>
 
       <h2>Arquitectura en capas (simple y mantenible)</h2>
@@ -95,12 +111,52 @@
 
       <p>La prioridad es <strong>entregar valor</strong> desde el primer uso: registrar con pocos clics, entender en segundos y anticipar desvíos a tiempo. A partir de ahí, iterar sin romper lo que ya funciona.</p>
     </article>
+
+    <!-- Navegación posts -->
+    <nav class="post-pager" aria-label="Navegación de artículos">
+      <a href="post-2.html">← Anterior</a>
+      <a href="./">Inicio →</a>
+    </nav>
+
+    <!-- Artículos recientes -->
+    <section class="recent" aria-labelledby="recent-title-3">
+      <h2 id="recent-title-3">Artículos recientes</h2>
+      <div class="recent-grid">
+        <article class="card">
+          <span class="badge">Proyecto</span>
+          <a href="post-1.html">
+            <img src="assets/img/post1.png" alt="Miniatura post 1">
+            <h2>Del Excel a la IA</h2>
+          </a>
+          <p class="excerpt">De Excel a app inteligente.</p>
+          <a class="read-more" href="post-1.html">Leer más</a>
+        </article>
+        <article class="card">
+          <span class="badge">IA</span>
+          <a href="post-2.html">
+            <img src="assets/img/post22.png" alt="Miniatura post 2">
+            <h2>IA para tus gastos</h2>
+          </a>
+          <p class="excerpt">OCR, clasificación y predicción.</p>
+          <a class="read-more" href="post-2.html">Leer más</a>
+        </article>
+        <article class="card">
+          <span class="badge">Desarrollo</span>
+          <a href="post-3.html">
+            <img src="assets/img/post3.png" alt="Miniatura post 3">
+            <h2>Retos y aprendizajes</h2>
+          </a>
+          <p class="excerpt">Tecnologías y decisiones.</p>
+          <a class="read-more" href="post-3.html">Leer más</a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
   <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
+
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
 </body>
 </html>
-
