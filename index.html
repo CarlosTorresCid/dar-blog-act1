@@ -30,12 +30,32 @@
       flex-direction: column;
       justify-content: space-between;
       padding-bottom: 15px;
-      position: relative; /* Necesario para posicionar el badge */
+      position: relative;
     }
 
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Contenedor de imagen con velo */
+    .card a {
+      position: relative;
+      display: block;
+      text-decoration: none;
+    }
+
+    .card a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25); /* velo oscuro sutil */
+      transition: background 0.3s ease;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .card:hover a::after {
+      background: rgba(0, 0, 0, 0.15); /* se aclara al pasar el ratón */
     }
 
     .card img {
@@ -75,13 +95,7 @@
       background: #ff944d;
     }
 
-    .card a {
-      text-decoration: none;
-      position: relative;
-      display: block;
-    }
-
-    /* === Badges (etiquetas naranjas cálidas) === */
+    /* === Badges (etiquetas cálidas) === */
     .badge {
       position: absolute;
       top: 18px;
@@ -92,21 +106,19 @@
       letter-spacing: 0.3px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 2;
     }
 
-    /* Proyecto → Naranja cobre */
     .card:nth-child(1) .badge {
       background: #e67e22;
       color: #fff;
     }
 
-    /* IA → Naranja brillante */
     .card:nth-child(2) .badge {
       background: #ff944d;
       color: #2b2b2b;
     }
 
-    /* Desarrollo → Beige cálido */
     .card:nth-child(3) .badge {
       background: #f4c391;
       color: #2b2b2b;
