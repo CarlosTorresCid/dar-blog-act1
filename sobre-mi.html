@@ -8,6 +8,44 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    /* ===== Estilo compacto de página ===== */
+    .page-compact { padding-top: 32px; padding-bottom: 48px; }
+
+    /* ===== Tarjeta “Sobre mí” ===== */
+    .about-card {
+      background: #111; border-radius: 16px; padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .about-grid {
+      display: grid; gap: 24px; align-items: center;
+      grid-template-columns: 180px 1fr;
+    }
+    .about-photo {
+      width: 180px; height: 180px; border-radius: 50%;
+      object-fit: cover; object-position: center;
+      border: 4px solid #ff944d; /* toque corporativo */
+      box-shadow: 0 6px 20px rgba(0,0,0,.4);
+    }
+    .about-title { margin: 0 0 8px; font-size: 1.8rem; }
+    .about-sub { margin: 0 0 18px; color: #f4c391; font-weight: 600; }
+
+    .about-list { margin: 14px 0; padding-left: 18px; }
+    .about-list li { margin: 6px 0; }
+
+    .about-actions { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-lite {
+      background: transparent; border: 1px solid #ff944d; color: #ff944d;
+      padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600;
+      transition: .2s ease;
+    }
+    .btn-lite:hover { background: #ff944d; color: #1a1a1a; }
+
+    @media (max-width: 680px){
+      .about-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .about-actions { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -23,22 +61,35 @@
     </nav>
   </header>
 
-  <!-- Hero igual que un post (opcional imagen) -->
-  <section class="post-hero">
-    <!-- si no tienes imagen aún, puedes quitar este <img> -->
-    <img src="assets/img/post1.png" alt="Foto/ilustración personal" class="featured-image" width="1600" height="400" loading="eager" decoding="async">
-    <div class="container">
-      <h1 class="post-title">Sobre mí</h1>
-      <p class="post-meta"><span class="meta-item tag">Perfil</span></p>
-    </div>
-  </section>
+  <main class="container page-compact">
+    <section class="about-card">
+      <div class="about-grid">
+        <!-- Cambia la ruta/archivo si tu foto se llama distinto -->
+        <img src="assets/img/carlos.jpg" alt="Foto de Carlos Torres"
+             class="about-photo" onerror="this.style.display='none'">
 
-  <main class="container post">
-    <article>
-      <p>Hola, soy <strong>Carlos Torres</strong>, estudiante de <em>Ingeniería Informática</em> con mención en Computación. Me apasionan la <strong>IA</strong>, el <strong>desarrollo web</strong> y la <strong>automatización</strong>.</p>
-      <p>Este blog documenta el desarrollo de una app de finanzas personales con IA: OCR para leer tickets, clasificación automática de gastos y predicciones de ahorro.</p>
-      <p>📍 Bilbao · Diseño limpio, datos y procesos eficientes.</p>
-    </article>
+        <div>
+          <h1 class="about-title">Carlos Torres</h1>
+          <p class="about-sub">Ingeniería Informática · UNIR (mención en Computación)</p>
+
+          <p>Hola, soy <strong>Carlos</strong>. Me apasionan la <strong>inteligencia artificial</strong>, el
+            <strong>desarrollo web</strong> y la <strong>automatización</strong>. Este blog recoge el avance de mi
+            proyecto: una app de finanzas personales con IA capaz de leer tickets mediante OCR, clasificar gastos y
+            predecir ahorro.</p>
+
+          <ul class="about-list">
+            <li>🎓 <strong>UNIR</strong> — Grado en Ingeniería Informática (mención en Computación).</li>
+            <li>🧠 Enfoque en <em>IA aplicada</em>, diseño limpio y datos accionables.</li>
+            <li>📍 Bilbao · Me gustan los procesos eficientes y bien diseñados.</li>
+          </ul>
+
+          <div class="about-actions">
+            <a class="btn-lite" href="./contacto.html">Escríbeme</a>
+            <a class="btn-lite" href="./">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
