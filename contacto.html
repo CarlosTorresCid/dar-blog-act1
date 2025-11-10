@@ -4,37 +4,64 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contacto – Finanzas Inteligentes</title>
-  <meta name="description" content="Ponte en contacto con Carlos Torres para colaborar o dejar tus comentarios.">
+  <meta name="description" content="Escríbeme para colaborar o comentar el proyecto.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="index.html">Finanzas Inteligentes</a>
-      <ul class="nav-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sobre-mi.html">Sobre mí</a></li>
-        <li><a href="contacto.html" class="active">Contacto</a></li>
+      <a class="logo" href="./">Finanzas Inteligentes</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="./">Inicio</a></li>
+        <li><a href="./sobre-mi.html">Sobre mí</a></li>
+        <li><a href="./contacto.html" class="active">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container contact-page">
-    <section>
-      <h1>Contacto</h1>
-      <p>¿Quieres comentar algo sobre el proyecto o proponer una colaboración? Escríbeme:</p>
-      <form action="mailto:carlostorrescid@example.com" method="post" enctype="text/plain" class="contact-form">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit">Enviar mensaje</button>
+  <!-- Hero igual que un post -->
+  <section class="post-hero">
+    <!-- si no tienes imagen, quita el <img> -->
+    <img src="assets/img/post3.png" alt="Ilustración de contacto" class="featured-image" width="1600" height="400" loading="eager" decoding="async">
+    <div class="container">
+      <h1 class="post-title">Contacto</h1>
+      <p class="post-meta"><span class="meta-item tag">Formulario</span></p>
+    </div>
+  </section>
+
+  <main class="container post">
+    <article>
+      <p>¿Tienes una idea o comentario sobre el proyecto? Escríbeme.</p>
+
+      <!-- Opción sencilla sin backend: mailto -->
+      <form class="contact-form" action="mailto:tu-correo@ejemplo.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="Nombre" type="text" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" required>
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="Mensaje" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn primary">Enviar</button>
       </form>
-    </section>
+
+      <!-- Si prefieres Formspree (recomendado): 
+      <form class="contact-form" action="https://formspree.io/f/XXXXXXX" method="POST">...</form>
+      -->
+    </article>
   </main>
 
+  <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
   <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
-  <button id="scrollTop" class="scroll-top">↑</button>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
