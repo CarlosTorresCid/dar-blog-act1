@@ -7,36 +7,42 @@
   <meta name="description" content="Conoce a Carlos Torres, creador del proyecto Finanzas Inteligentes.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="index.html">Finanzas Inteligentes</a>
-      <ul class="nav-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sobre-mi.html" class="active">Sobre mí</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+      <a class="logo" href="./">Finanzas Inteligentes</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">☰</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="./">Inicio</a></li>
+        <li><a href="./sobre-mi.html" class="active">Sobre mí</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container about-page">
-    <section>
-      <h1>Sobre mí</h1>
-      <div class="about-wrap">
-        <img src="assets/img/carlos.jpg" alt="Foto de Carlos Torres" class="about-photo" onerror="this.style.display='none'">
-        <div class="about-text">
-          <p>Hola, soy <strong>Carlos Torres</strong>, estudiante de <em>Ingeniería Informática</em> con mención en Computación. Apasionado por la <strong>inteligencia artificial</strong>, el <strong>desarrollo web</strong> y la <strong>automatización</strong>.</p>
-          <p>Este blog nace como parte de mi proyecto académico y personal: desarrollar una aplicación de finanzas personales basada en IA, capaz de leer facturas mediante OCR, clasificar gastos y generar predicciones.</p>
-          <p>Disfruto combinando la programación con el diseño limpio, el análisis de datos y la optimización de procesos.</p>
-          <p>📍 Actualmente vivo en Bilbao y trabajo en varios proyectos tecnológicos y de diseño web.</p>
-        </div>
-      </div>
-    </section>
+  <!-- Hero igual que un post (opcional imagen) -->
+  <section class="post-hero">
+    <!-- si no tienes imagen aún, puedes quitar este <img> -->
+    <img src="assets/img/post1.png" alt="Foto/ilustración personal" class="featured-image" width="1600" height="400" loading="eager" decoding="async">
+    <div class="container">
+      <h1 class="post-title">Sobre mí</h1>
+      <p class="post-meta"><span class="meta-item tag">Perfil</span></p>
+    </div>
+  </section>
+
+  <main class="container post">
+    <article>
+      <p>Hola, soy <strong>Carlos Torres</strong>, estudiante de <em>Ingeniería Informática</em> con mención en Computación. Me apasionan la <strong>IA</strong>, el <strong>desarrollo web</strong> y la <strong>automatización</strong>.</p>
+      <p>Este blog documenta el desarrollo de una app de finanzas personales con IA: OCR para leer tickets, clasificación automática de gastos y predicciones de ahorro.</p>
+      <p>📍 Bilbao · Diseño limpio, datos y procesos eficientes.</p>
+    </article>
   </main>
 
+  <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
   <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
-  <button id="scrollTop" class="scroll-top">↑</button>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
