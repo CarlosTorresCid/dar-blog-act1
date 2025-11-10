@@ -8,9 +8,27 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .page-compact { padding-top: 32px; padding-bottom: 48px; }
+    .contact-card {
+      background: #111; border-radius: 16px; padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      max-width: 760px; margin: 0 auto;
+    }
+    .contact-card h1 { margin-top: 0; margin-bottom: 8px; }
+    .contact-form .form-row { display: grid; gap: 8px; margin: 12px 0; }
+    .contact-form input, .contact-form textarea {
+      background: #0e0e0e; border: 1px solid #333; color: #eee; border-radius: 10px;
+      padding: 12px 14px; width: 100%;
+    }
+    .contact-form button {
+      background: #e67e22; color: #fff; border: 0; border-radius: 10px;
+      padding: 12px 18px; font-weight: 700; cursor: pointer; transition: .2s;
+    }
+    .contact-form button:hover { background: #ff944d; }
+  </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
       <a class="logo" href="./">Finanzas Inteligentes</a>
@@ -23,21 +41,12 @@
     </nav>
   </header>
 
-  <!-- Hero igual que un post -->
-  <section class="post-hero">
-    <!-- si no tienes imagen, quita el <img> -->
-    <img src="assets/img/post3.png" alt="Ilustración de contacto" class="featured-image" width="1600" height="400" loading="eager" decoding="async">
-    <div class="container">
-      <h1 class="post-title">Contacto</h1>
-      <p class="post-meta"><span class="meta-item tag">Formulario</span></p>
-    </div>
-  </section>
+  <main class="container page-compact">
+    <section class="contact-card">
+      <h1>Contacto</h1>
+      <p>¿Tienes una idea o comentario sobre el proyecto? Escríbeme y te respondo en cuanto pueda.</p>
 
-  <main class="container post">
-    <article>
-      <p>¿Tienes una idea o comentario sobre el proyecto? Escríbeme.</p>
-
-      <!-- Opción sencilla sin backend: mailto -->
+      <!-- Opción sin backend -->
       <form class="contact-form" action="mailto:tu-correo@ejemplo.com" method="post" enctype="text/plain">
         <div class="form-row">
           <label for="nombre">Nombre</label>
@@ -51,13 +60,13 @@
           <label for="mensaje">Mensaje</label>
           <textarea id="mensaje" name="Mensaje" rows="6" required></textarea>
         </div>
-        <button type="submit" class="btn primary">Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
 
-      <!-- Si prefieres Formspree (recomendado): 
-      <form class="contact-form" action="https://formspree.io/f/XXXXXXX" method="POST">...</form>
+      <!-- Recomendado: Formspree (sustituye la acción por tu endpoint)
+      <form class="contact-form" action="https://formspree.io/f/TU_ID" method="POST"> ... </form>
       -->
-    </article>
+    </section>
   </main>
 
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
