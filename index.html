@@ -3,14 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Finanzas Inteligentes – Actividad 1</title>
-  <meta name="description" content="Blog de la Actividad 1: desarrollo de una app de finanzas personales con inteligencia artificial.">
+  <title>Finanzas Inteligentes – Diario de un Proyecto con IA</title>
+  <meta name="description" content="Explorando cómo la inteligencia artificial puede ayudarnos a entender, automatizar y mejorar la gestión de nuestras finanzas personales.">
+  <!-- CSS principal del sitio -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
+
+  <!-- Extras mínimos para Sobre mí / Contacto y pequeños retoques -->
+  <style>
+    /* Hero */
+    .hero{padding:48px 0;text-align:center}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.6rem;color:#ff944d}
+    .hero p{color:#bfbfbf;max-width:720px;margin:0 auto}
+
+    /* Grid de posts (mismo patrón que ya usas) */
+    .posts{display:grid;gap:28px;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:980px){.posts{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.posts{grid-template-columns:1fr}}
+
+    /* Cards (resumen) */
+    .card{background:#141414;border:1px solid #2a2a2a;border-radius:16px;box-shadow:0 10px 22px rgba(0,0,0,.35);overflow:hidden;display:flex;flex-direction:column}
+    .card a{position:relative;display:block;text-decoration:none}
+    .card a::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.22);transition:background .25s ease}
+    .card:hover a::after{background:rgba(0,0,0,.12)}
+    .card img{width:100%;height:220px;object-fit:cover;display:block;border-bottom:3px solid #e67e22}
+    .card h2{font-size:1.25rem;color:#ff944d;margin:16px}
+    .card .excerpt{color:#cfcfcf;margin:0 16px 16px;line-height:1.55}
+    .read-more{align-self:flex-start;margin:0 16px 20px;background:#e67e22;color:#fff;border:none;border-radius:10px;padding:12px 18px;font-weight:700}
+    .read-more:hover{background:#ff944d}
+
+    /* Badges naranjas (mismos tonos) */
+    .badge{position:absolute;top:14px;right:14px;background:#ff944d;color:#2b2b2b;border-radius:999px;padding:6px 12px;font-weight:700;z-index:2}
+    .posts .card:nth-child(1) .badge{background:#e67e22;color:#fff}
+    .posts .card:nth-child(2) .badge{background:#ff944d;color:#2b2b2b}
+    .posts .card:nth-child(3) .badge{background:#f4c391;color:#2b2b2b}
+
+    /* SOBRE MÍ */
+    .about{margin:70px 0 30px}
+    .about h2{color:#ff944d;text-align:center;margin-bottom:18px}
+    .about-intro{color:#cfcfcf;text-align:center;max-width:760px;margin:0 auto 26px}
+    .about-wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .about-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+    .about-text{max-width:620px;color:#d8d8d8;line-height:1.65}
+    .about-text strong{color:#fff}
+
+    /* CONTACTO */
+    .contact{margin:40px 0 10px}
+    .contact h2{color:#ff944d;text-align:center;margin-bottom:10px}
+    .contact p.lead{color:#cfcfcf;text-align:center;margin-bottom:18px}
+    .contact-form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+    .contact-form input,.contact-form textarea{
+      background:#161616;border:1px solid #2f2f2f;border-radius:10px;padding:12px 14px;color:#fff
+    }
+    .contact-form input::placeholder,.contact-form textarea::placeholder{color:#9b9b9b}
+    .contact-form button{background:#e67e22;color:#fff;border:none;border-radius:10px;padding:12px 18px;font-weight:700}
+    .contact-form button:hover{background:#ff944d}
+
+    /* Scroll top (se muestra vía JS) */
+    .scroll-top{position:fixed;right:16px;bottom:16px;width:48px;height:48px;border-radius:12px;background:#e67e22;color:#fff;border:1px solid #e67e22;display:none;align-items:center;justify-content:center;font-weight:800}
+    .scroll-top.show{display:flex}
+  </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <nav class="nav container">
       <a class="logo" href="./">Finanzas Inteligentes</a>
@@ -23,17 +79,17 @@
     </nav>
   </header>
 
+  <!-- ===== HERO ===== -->
   <main class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <h1>Finanzas Inteligentes – Diario de un Proyecto con IA</h1>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Finanzas Inteligentes – Diario de un Proyecto con IA</h1>
       <p>Explorando cómo la inteligencia artificial puede ayudarnos a entender, automatizar y mejorar la gestión de nuestras finanzas personales.</p>
     </section>
 
-    <!-- Listado -->
+    <!-- ===== LISTADO DE POSTS ===== -->
     <section aria-label="Últimas entradas">
       <div class="posts">
-        <!-- Card 1 -->
+        <!-- Post 1 -->
         <article class="card">
           <span class="badge">Proyecto</span>
           <a href="post-1.html" aria-label="Leer la entrada: Del Excel a la IA: el nacimiento de una idea">
@@ -41,21 +97,21 @@
             <h2>Del Excel a la IA: el nacimiento de una idea</h2>
           </a>
           <p class="excerpt">Cómo una hoja de cálculo se transformó en una aplicación inteligente de gestión financiera.</p>
-          <a class="read-more" href="post-1.html" aria-label="Leer más sobre Del Excel a la IA">Leer más</a>
+          <a class="read-more" href="post-1.html">LEER MÁS</a>
         </article>
 
-        <!-- Card 2 -->
+        <!-- Post 2 -->
         <article class="card">
           <span class="badge">IA</span>
           <a href="post-2.html" aria-label="Leer la entrada: Cómo la IA puede ayudarte a controlar tus gastos">
-            <img src="assets/img/post22.png" alt="Miniatura del artículo sobre IA en finanzas personales" loading="lazy">
+            <img src="assets/img/post22.png" alt="Ilustración sobre IA aplicada a finanzas personales" loading="lazy">
             <h2>Cómo la IA puede ayudarte a controlar tus gastos</h2>
           </a>
           <p class="excerpt">Del reconocimiento automático de facturas a la predicción de tu ahorro mensual.</p>
-          <a class="read-more" href="post-2.html" aria-label="Leer más sobre IA y gastos">Leer más</a>
+          <a class="read-more" href="post-2.html">LEER MÁS</a>
         </article>
 
-        <!-- Card 3 -->
+        <!-- Post 3 -->
         <article class="card">
           <span class="badge">Desarrollo</span>
           <a href="post-3.html" aria-label="Leer la entrada: Construyendo la app: retos y aprendizajes">
@@ -63,34 +119,48 @@
             <h2>Construyendo la app: retos y aprendizajes</h2>
           </a>
           <p class="excerpt">Las tecnologías, decisiones y obstáculos detrás del desarrollo del proyecto.</p>
-          <a class="read-more" href="post-3.html" aria-label="Leer más sobre el desarrollo">Leer más</a>
+          <a class="read-more" href="post-3.html">LEER MÁS</a>
         </article>
       </div>
     </section>
+
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre mí</h2>
+      <p class="about-intro">Soy Carlos Torres, estudiante de Ingeniería Informática (mención en Computación). Me apasiona la IA aplicada a problemas reales, el desarrollo web y la automatización.</p>
+      <div class="about-wrap">
+        <!-- Si no tienes foto aún, deja un placeholder o sube assets/img/carlos.jpg -->
+        <img class="about-photo" src="assets/img/carlos.jpg" alt="Foto de Carlos Torres" onerror="this.style.display='none'">
+        <div class="about-text">
+          <p>Este blog acompaña mi proyecto: una app de finanzas personales con <strong>OCR</strong> para leer tickets, <strong>clasificación inteligente</strong> de movimientos y <strong>predicción</strong> de gasto/ahorro.</p>
+          <p>Disfruto diseñando soluciones prácticas, con un enfoque limpio y medible. Me muevo entre <strong>Java / Spring</strong>, <strong>PostgreSQL</strong> y front minimalista en <strong>HTML/CSS/JS</strong>. También trabajo con automatización y flujos low-code.</p>
+          <p>Si te interesa colaborar o dar feedback, te leo encantado 👇</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contacto</h2>
+      <p class="lead">¿Quieres comentar algo del proyecto o proponer una colaboración?</p>
+      <!-- mailto: pon aquí tu correo real -->
+      <form action="mailto:carlostorrescid@example.com" method="post" enctype="text/plain" class="contact-form">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">© 2025 Finanzas Inteligentes – Actividad 1</footer>
 
-  <!-- Scroll to top (también en el index) -->
+  <!-- ===== BOTÓN SCROLL TOP (mismo que en posts) ===== -->
   <button id="scrollTop" class="scroll-top" aria-label="Volver arriba">↑</button>
 
-  <!-- JS -->
+  <!-- JS del sitio (incluye lógica del scroll-top y menú móvil) -->
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
-
-  <!-- ScrollTop logic (si tu main.js no lo incluye) -->
-  <script>
-    (function(){
-      const btn = document.getElementById('scrollTop');
-      if(!btn) return;
-      const toggle = () => {
-        if (window.scrollY > 300) btn.classList.add('show');
-        else btn.classList.remove('show');
-      };
-      window.addEventListener('scroll', toggle, { passive: true });
-      toggle();
-      btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-    })();
-  </script>
 </body>
 </html>
